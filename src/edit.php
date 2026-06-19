@@ -28,7 +28,7 @@ if (!$product) { header("Location: index.php"); exit; }
     <h1 class="mb-4">Edit Product</h1>
     <form method="POST" class="bg-white p-4 rounded shadow-sm">
         <div class="mb-3">
-            <label class="form-label">Name</label>
+            <label class="form-label">Name:</label>
             <input type="text" name="name" class="form-control" value="<?= htmlspecialchars($product['name']) ?>" required>
         </div>
         <div class="mb-3">
