@@ -7,6 +7,7 @@ BACKUP_FILE="${BACKUP_DIR}/backup_${TIMESTAMP}.sql.gz"
 
 mkdir -p "$BACKUP_DIR"
 
+
 echo "[$(date)] Starting backup..."
 
 docker compose -f /opt/ashadi/docker-compose.yml exec -T mysql \

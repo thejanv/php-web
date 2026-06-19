@@ -31,7 +31,7 @@ $products = $pdo->query("SELECT * FROM products ORDER BY id DESC")->fetchAll();
                     <form method="POST" action="delete.php" style="display:inline"
                           onsubmit="return confirm('Delete this product?')">
                         <input type="hidden" name="id" value="<?= $p['id'] ?>">
-                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-sm btn-danger">Deletes</button>
                     </form>
                 </td>
             </tr>
