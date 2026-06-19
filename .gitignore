@@ -1,0 +1,5 @@
+.env
+docker-compose.override.yml
+certbot/
+.DS_Store
+backups
