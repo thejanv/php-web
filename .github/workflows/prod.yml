@@ -8,7 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: production # ← manual approval gate
+    environment: production
     steps:
       - uses: actions/checkout@v4
 
@@ -20,6 +20,8 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
             cd /opt/ashadi
+            git checkout -- .
             git pull origin main
-            docker compose -f docker-compose.yml up -d --build
+            printf 'services:\n  nginx:\n    ports:\n      - "80:80"\n      - "443:443"\n' > docker-compose.override.yml
+            docker compose -f docker-compose.yml -f docker-compose.override.yml up -d --build
             docker image prune -f
