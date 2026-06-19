@@ -20,5 +20,5 @@ jobs:
           script: |
             cd /opt/ashadi-staging
             git pull origin staging
-            docker compose -f docker-compose.yml up -d --build
+            docker compose -f docker-compose.yml -f docker-compose.override.yml up -d --build
             docker image prune -f
